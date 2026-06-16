@@ -30,7 +30,7 @@ class Pacientes extends CI_Controller
 
         $this->form_validation->set_rules('nombre', 'Nombre', 'required');
         $this->form_validation->set_rules('apellido', 'Apellido', 'required');
-        $this->form_validation->set_rules('diagnostico_id', 'Diagnóstico', 'required');
+        $this->form_validation->set_rules('diagnostico', 'Diagnóstico', 'required');
 
         if($this->form_validation->run() == FALSE){
             $this->crear();
@@ -39,7 +39,7 @@ class Pacientes extends CI_Controller
             $data = array(
                 'nombre' => $this->input->post('nombre'),
                 'apellido' => $this->input->post('apellido'),
-                'diagnostico_id' => $this->input->post('diagnostico_id')
+                'diagnostico' => $this->input->post('diagnostico')
             );
 
             $this->Paciente_model->crear($data);
@@ -56,7 +56,7 @@ class Pacientes extends CI_Controller
 
         $this->form_validation->set_rules('nombre', 'Nombre', 'required');
         $this->form_validation->set_rules('apellido', 'Apellido', 'required');
-        $this->form_validation->set_rules('diagnostico_id', 'Diagnóstico', 'required');
+        $this->form_validation->set_rules('diagnostico', 'Diagnóstico', 'required');
 
         if($this->form_validation->run() == FALSE){
             $data['paciente'] = $this->Paciente_model->get_by_id($id);
@@ -66,7 +66,7 @@ class Pacientes extends CI_Controller
             $data = array(
                 'nombre' => $this->input->post('nombre'),
                 'apellido' => $this->input->post('apellido'),
-                'diagnostico_id' => $this->input->post('diagnostico_id')
+                'diagnostico' => $this->input->post('diagnostico')
             );
 
             $this->Paciente_model->actualizar($id, $data);

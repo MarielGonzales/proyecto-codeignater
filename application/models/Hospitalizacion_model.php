@@ -4,9 +4,24 @@ class Hospitalizacion_model extends CI_Model
 {
     private $tabla = 'Hospitalizaciones';
 
-    public function get_all(){
-        return $this->db->get($this->tabla)->result_array();
+    public function getAll()
+    {
+        $this->db->select('
+        h.id,
+        CONCAT(p.nombre, " ", p.apellido) AS paciente,
+        s.nombre AS sala,
+        h.fecha_ingreso,
+        h.fecha_alta
+    ');
+
+    $this->db->from('hospitalizaciones h');
+    $this->db->join('pacientes p', 'p.id = h.paciente_id');
+    $this->db->join('salas s', 's.id = h.sala_id');
+
+    return $this->db->get()->result_array();
     }
+
+  
 
     public function get_by_id($id){
         return $this->db->where('id', $id)

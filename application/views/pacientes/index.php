@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<?php $this->load->view('templates/navbar'); ?>
 <div class="container mt-4">
 
     <h2>Lista de Pacientes</h2>
@@ -35,7 +35,7 @@
                 <td><?= $p['id'] ?></td>
                 <td><?= $p['nombre'] ?></td>
                 <td><?= $p['apellido'] ?></td>
-                <td><?= $p['diagnostico_id'] ?></td>
+                <td><?= $p['diagnostico'] ?></td>
 
                 <td>
                     <a href="<?= site_url('pacientes/editar/'.$p['id']) ?>" class="btn btn-warning btn-sm">Editar</a>

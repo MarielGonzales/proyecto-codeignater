@@ -16,8 +16,8 @@ class Salas extends CI_Controller
         $this->load->library('form_validation');
     }
 
-    public function index(){
-        $data['salas'] = $this->Sala_model->get_all();
+    public function index(){   
+        $data['salas'] = $this->Sala_model->getAll();
         $this->load->view('salas/index', $data);
     }
 

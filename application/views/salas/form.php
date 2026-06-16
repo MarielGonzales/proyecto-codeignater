@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Sala - Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<?php $this->load->view('templates/navbar'); ?>
 <h2><?= isset($sala) ? 'Editar' : 'Nueva' ?> Sala</h2>
 
 <?php

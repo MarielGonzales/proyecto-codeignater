@@ -1,6 +1,6 @@
 <?php
 
-class TipoDiagnostico_model extends CI_Model
+class TiposDiagnostico_model extends CI_Model
 {
     private $tabla = 'TiposDiagnostico';
 

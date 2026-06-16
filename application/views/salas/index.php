@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<?php $this->load->view('templates/navbar'); ?>
 <div class="container mt-4">
 
     <h2>Lista de Salas</h2>
